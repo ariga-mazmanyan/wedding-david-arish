@@ -311,11 +311,11 @@ export default function Page() {
             </div>
           </div>
           {/* Next Page Scroll Arrow */}
-          <a href="#location" aria-label="Scroll to location details" className="mt-10 flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 text-primary transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-primary-foreground"><ArrowDown size={16} strokeWidth={1.5} /></a>
+          <a href="#schedule" aria-label="Scroll to schedule details" className="mt-10 flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 text-primary transition-all duration-300 hover:scale-105 hover:bg-primary hover:text-primary-foreground"><ArrowDown size={16} strokeWidth={1.5} /></a>
         </div>
       </section>
 
-      <section id="location" className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-16 text-center md:px-12 md:pt-16 md:pb-20">
+      <section id="schedule" className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-16 text-center md:px-12 md:pt-16 md:pb-20">
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
           {/* Title */}
           <h2 className="-mt-2 font-dzeragir text-5xl leading-tight text-primary sm:text-6xl md:text-7xl">
