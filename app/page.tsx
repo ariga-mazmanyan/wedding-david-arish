@@ -257,9 +257,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="details" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-6 pt-16 pb-20 text-center md:px-12 md:pt-24 md:pb-28">
+      <section id="details" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-6 pt-14 pb-20 text-center md:px-12 md:pt-24 md:pb-28">
         <div className="absolute inset-0 bg-[url('/page2-bg.jpg')] bg-cover bg-[position:center_top]" aria-hidden="true" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,245,239,.82)_0%,rgba(248,245,239,.18)_18%,rgba(248,245,239,.0)_35%,rgba(248,245,239,.45)_58%,rgba(248,245,239,.75)_75%,rgba(248,245,239,.92)_100%)]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,245,239,.78)_0%,rgba(248,245,239,.10)_15%,rgba(248,245,239,.0)_50%,rgba(248,245,239,.55)_68%,rgba(248,245,239,.88)_84%,rgba(248,245,239,.98)_100%)]" aria-hidden="true" />
 
         {/* Top: Greeting */}
         <div className="relative z-10 mx-auto max-w-3xl">
@@ -268,13 +268,13 @@ export default function Page() {
           </h2>
         </div>
 
-        {/* Center: Open spacing to clearly see both faces */}
-        <div className="min-h-[17rem] sm:min-h-[22rem] md:min-h-[26rem]" aria-hidden="true" />
+        {/* Center: Large open spacing to completely clear both faces */}
+        <div className="min-h-[27rem] sm:min-h-[30rem] md:min-h-[34rem]" aria-hidden="true" />
 
         {/* Bottom: Lowered invitation text and Calendar */}
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center">
-          <div className="mx-auto max-w-2xl rounded-3xl border border-white/45 bg-white/40 px-6 py-5 text-center shadow-xs backdrop-blur-[4px] sm:px-8 sm:py-6">
-            <p className="font-dzeragir text-2xl leading-relaxed text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-3xl md:text-4xl">
+          <div className="mx-auto max-w-xl rounded-3xl border border-white/45 bg-white/45 px-5 py-4 text-center shadow-xs backdrop-blur-[4px] sm:px-8 sm:py-6">
+            <p className="font-dzeragir text-xl leading-relaxed text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-3xl md:text-4xl">
               Մեծ սիրով հրավիրում ենք ձեզ՝<br />
               միասին կիսելու մեր կյանքի ամենակարևոր օրվա<br />
               անմոռանալի ակնթարթներն ու ջերմությունը
