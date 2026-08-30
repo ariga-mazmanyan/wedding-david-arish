@@ -515,7 +515,7 @@ export default function Page() {
       <section id="rsvp" className="relative z-10 mx-auto max-w-lg px-6 py-20 md:px-8 md:py-28 scroll-mt-12">
         <div className="rounded-3xl border border-primary/20 bg-white/80 p-6 shadow-lg backdrop-blur-md sm:p-8 md:p-10">
           <h2 className="text-center font-armenian-sans text-xl font-normal leading-relaxed text-primary sm:text-2xl">
-            Խնդրում ենք հաստատեք Ձեր ներկայությունը<br />
+            Խնդրում ենք հաստատել Ձեր ներկայությունը<br />
             <span className="text-muted-foreground text-base sm:text-lg">մինչև հոկտեմբերի 18-ը</span>
           </h2>
 
