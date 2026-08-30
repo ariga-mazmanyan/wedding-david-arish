@@ -103,6 +103,9 @@ export default function Page() {
   }, [])
 
   // Initialize YouTube Iframe Player for Elliot James Reay - I Think They Call This Love
+  const hasInteractedRef = useRef(false)
+  const hasStartedPlayingRef = useRef(false)
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       if (!window.YT) {
@@ -115,8 +118,8 @@ export default function Page() {
       const createPlayer = () => {
         try {
           ytPlayerRef.current = new window.YT.Player('youtube-audio-frame', {
-            height: '0',
-            width: '0',
+            height: '1',
+            width: '1',
             videoId: 'e1mOmdykmwI',
             playerVars: {
               autoplay: 1,
@@ -124,18 +127,21 @@ export default function Page() {
               loop: 1,
               playlist: 'e1mOmdykmwI',
               playsinline: 1,
+              enablejsapi: 1,
+              rel: 0,
             },
             events: {
               onReady: (event: any) => {
                 try {
                   event.target.playVideo()
                 } catch {
-                  // Handled by user interaction below
+                  // Browser policy may require user interaction
                 }
               },
               onStateChange: (event: any) => {
                 if (event.data === 1) {
                   setIsPlaying(true)
+                  hasStartedPlayingRef.current = true
                 } else if (event.data === 2 || event.data === 0) {
                   setIsPlaying(false)
                 }
@@ -155,28 +161,38 @@ export default function Page() {
     }
   }, [])
 
-  // Auto-start music on first user interaction if browser blocked initial autoplay
+  // Auto-start music automatically on page load or on first user touch/click/scroll
   useEffect(() => {
     const handleAutoPlay = () => {
-      if (ytPlayerRef.current && ytPlayerRef.current.playVideo) {
-        ytPlayerRef.current.playVideo()
+      hasInteractedRef.current = true
+      if (ytPlayerRef.current && typeof ytPlayerRef.current.playVideo === 'function') {
+        try {
+          ytPlayerRef.current.playVideo()
+        } catch {}
       }
+      if (hasStartedPlayingRef.current) {
+        removeListeners()
+      }
+    }
+
+    const removeListeners = () => {
       window.removeEventListener('click', handleAutoPlay)
       window.removeEventListener('touchstart', handleAutoPlay)
+      window.removeEventListener('touchend', handleAutoPlay)
+      window.removeEventListener('pointerdown', handleAutoPlay)
       window.removeEventListener('scroll', handleAutoPlay)
       window.removeEventListener('keydown', handleAutoPlay)
     }
 
-    window.addEventListener('click', handleAutoPlay, { once: true })
-    window.addEventListener('touchstart', handleAutoPlay, { once: true })
-    window.addEventListener('scroll', handleAutoPlay, { once: true })
-    window.addEventListener('keydown', handleAutoPlay, { once: true })
+    window.addEventListener('click', handleAutoPlay, { passive: true })
+    window.addEventListener('touchstart', handleAutoPlay, { passive: true })
+    window.addEventListener('touchend', handleAutoPlay, { passive: true })
+    window.addEventListener('pointerdown', handleAutoPlay, { passive: true })
+    window.addEventListener('scroll', handleAutoPlay, { passive: true })
+    window.addEventListener('keydown', handleAutoPlay, { passive: true })
 
     return () => {
-      window.removeEventListener('click', handleAutoPlay)
-      window.removeEventListener('touchstart', handleAutoPlay)
-      window.removeEventListener('scroll', handleAutoPlay)
-      window.removeEventListener('keydown', handleAutoPlay)
+      removeListeners()
     }
   }, [])
 
@@ -692,7 +708,7 @@ export default function Page() {
       </footer>
 
       {/* Hidden YouTube Audio Player Container */}
-      <div id="youtube-audio-frame" className="pointer-events-none fixed -top-[2000px] -left-[2000px] opacity-0" aria-hidden="true" />
+      <div id="youtube-audio-frame" className="pointer-events-none fixed -bottom-10 -right-10 h-1 w-1 opacity-[0.01] overflow-hidden -z-50" aria-hidden="true" />
 
       {/* Floating Background Music Toggle */}
       <button
