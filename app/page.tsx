@@ -273,8 +273,8 @@ export default function Page() {
 
         {/* Bottom: Lowered invitation text and Calendar */}
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center">
-          <div className="mx-auto max-w-xl rounded-3xl border border-white/45 bg-white/45 px-5 py-4 text-center shadow-xs backdrop-blur-[4px] sm:px-8 sm:py-6">
-            <p className="font-dzeragir text-xl leading-relaxed text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-3xl md:text-4xl">
+          <div className="mx-auto max-w-xl rounded-3xl border border-white/45 bg-white/45 px-6 py-5 text-center shadow-xs backdrop-blur-[4px] sm:px-8 sm:py-6">
+            <p className="font-dzeragir text-[1.55rem] leading-relaxed text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-3xl md:text-4xl">
               Մեծ սիրով հրավիրում ենք ձեզ՝<br />
               միասին կիսելու մեր կյանքի ամենակարևոր օրվա<br />
               անմոռանալի ակնթարթներն ու ջերմությունը
