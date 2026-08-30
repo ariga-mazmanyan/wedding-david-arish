@@ -209,7 +209,7 @@ export default function Page() {
       </nav>
 
       <section id="top" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-6 pt-16 pb-10 text-center md:pt-20 md:pb-14">
-        <div className="absolute inset-0 bg-[url('/hero-mobile.jpg')] md:bg-[url('/hero.jpg')] bg-cover bg-[position:75%_center] md:bg-[position:75%_center] opacity-90" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[url('/hero-mobile.jpg')] md:bg-[url('/hero.jpg')] bg-cover bg-[position:80%_center] md:bg-[position:80%_center] opacity-90" aria-hidden="true" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,245,239,.65)_0%,rgba(248,245,239,.12)_25%,rgba(248,245,239,.15)_45%,rgba(248,245,239,.82)_70%,rgba(248,245,239,.96)_100%)] md:bg-[linear-gradient(180deg,rgba(248,245,239,.55)_0%,rgba(248,245,239,.12)_25%,rgba(248,245,239,.80)_70%,rgba(248,245,239,.96)_100%)]" aria-hidden="true" />
 
         {/* Top: Header on first page only */}
