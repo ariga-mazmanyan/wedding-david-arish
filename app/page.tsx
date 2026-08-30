@@ -214,7 +214,7 @@ export default function Page() {
 
         {/* Top: Header on first page only */}
         <div className="relative z-10 pt-2 sm:pt-4">
-          <p className="animate-fade-up font-armenian-sans text-base font-bold uppercase tracking-[0.24em] text-primary drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)] sm:text-lg md:text-xl">
+          <p className="animate-fade-up font-armenian-sans text-base font-bold uppercase tracking-[0.24em] text-accent sm:text-lg md:text-xl">
             Հարսանեկան հրավիրատոմս
           </p>
         </div>
