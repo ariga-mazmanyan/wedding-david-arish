@@ -686,8 +686,8 @@ export default function Page() {
       <footer className="relative z-10 flex flex-col items-center gap-3 border-t border-primary/15 bg-white/80 px-6 py-10 text-center backdrop-blur-md">
         <p className="font-dzeragir text-4xl text-primary sm:text-5xl">Դավիթ և Արիշ</p>
         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">07 · 11 · 2026</p>
-        <p className="mt-2 flex items-center justify-center gap-1.5 font-serif italic text-xs tracking-wider text-muted-foreground/80 sm:text-sm">
-          Made by Arish <span className="text-accent not-italic">♥</span>
+        <p className="mt-2 flex items-center justify-center gap-1.5 font-serif italic text-xs tracking-wider text-muted-foreground/80 sm:text-sm text-center px-4">
+          Created with love by the Bride, Arish, for our special day <span className="text-accent not-italic">♥</span>
         </p>
       </footer>
 
