@@ -198,7 +198,7 @@ export default function Page() {
       <div className="fixed inset-0 z-0 bg-[url('/ceremony-bg.jpg')] bg-cover bg-[position:center_top] opacity-80" aria-hidden="true" />
       <div className="fixed inset-0 z-0 bg-[linear-gradient(180deg,rgba(248,245,239,.88)_0%,rgba(248,245,239,.55)_25%,rgba(248,245,239,.65)_60%,rgba(248,245,239,.94)_100%)]" aria-hidden="true" />
 
-      <nav className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-4 py-3.5 sm:px-6 sm:py-5 text-[11px] uppercase tracking-[0.14em] sm:text-xs sm:tracking-[0.22em] md:px-12 backdrop-blur-[2px] bg-background/30">
+      <nav className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-4 py-2 sm:px-6 sm:py-3 text-[10.5px] uppercase tracking-[0.12em] sm:text-xs sm:tracking-[0.22em] md:px-12 bg-transparent">
         <a href="#top" className="font-serif text-xl sm:text-2xl font-light tracking-[0.12em] text-primary shrink-0">D <span className="italic text-accent">&</span> A</a>
         <div className="flex items-center gap-3.5 sm:gap-6 md:gap-8 font-medium">
           <a href="#details" className="transition-opacity hover:opacity-60">Details</a>
@@ -319,10 +319,10 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="schedule" className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-16 text-center md:px-12 md:pt-16 md:pb-20">
-        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
+      <section id="schedule" className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-16 pb-16 text-center sm:pt-20 md:px-12 md:pb-20 scroll-mt-12">
+        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center pt-2">
           {/* Title */}
-          <h2 className="-mt-2 font-dzeragir text-5xl leading-tight text-primary sm:text-6xl md:text-7xl">
+          <h2 className="font-dzeragir text-5xl leading-tight text-primary sm:text-6xl md:text-7xl">
             Օրվա ծրագիրը
           </h2>
 
@@ -389,9 +389,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="reception" className="relative z-10 mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-center px-6 pt-10 pb-16 text-center md:px-12 md:pt-14 md:pb-20">
+      <section id="reception" className="relative z-10 mx-auto flex min-h-[100svh] max-w-4xl flex-col items-center justify-center px-6 pt-12 pb-16 text-center md:px-12 md:pt-16 md:pb-20 scroll-mt-12">
         {/* Reception Header */}
-        <h2 className="-mt-4 font-dzeragir text-4xl text-primary sm:-mt-6 sm:text-5xl md:text-6xl">
+        <h2 className="font-dzeragir text-4xl text-primary sm:text-5xl md:text-6xl">
           Հանդիսություն
         </h2>
 
@@ -512,7 +512,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="rsvp" className="relative z-10 mx-auto max-w-lg px-6 py-20 md:px-8 md:py-28">
+      <section id="rsvp" className="relative z-10 mx-auto max-w-lg px-6 py-20 md:px-8 md:py-28 scroll-mt-12">
         <div className="rounded-3xl border border-primary/20 bg-white/80 p-6 shadow-lg backdrop-blur-md sm:p-8 md:p-10">
           <h2 className="text-center font-armenian-sans text-xl font-normal leading-relaxed text-primary sm:text-2xl">
             Խնդրում ենք հաստատեք Ձեր ներկայությունը<br />
