@@ -198,10 +198,14 @@ export default function Page() {
       <div className="fixed inset-0 z-0 bg-[url('/ceremony-bg.jpg')] bg-cover bg-[position:center_top] opacity-80" aria-hidden="true" />
       <div className="fixed inset-0 z-0 bg-[linear-gradient(180deg,rgba(248,245,239,.88)_0%,rgba(248,245,239,.55)_25%,rgba(248,245,239,.65)_60%,rgba(248,245,239,.94)_100%)]" aria-hidden="true" />
 
-      <nav className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-5 text-xs uppercase tracking-[0.22em] md:px-12">
-        <a href="#top" className="font-serif text-2xl font-light tracking-[0.12em] text-primary">D <span className="italic text-accent">&</span> A</a>
-        <div className="hidden gap-8 md:flex"><a href="#details" className="transition-opacity hover:opacity-60">Details</a><a href="#schedule" className="transition-opacity hover:opacity-60">Schedule</a><a href="#rsvp" className="transition-opacity hover:opacity-60">RSVP</a></div>
-        <span className="font-mono text-[10px] text-muted-foreground">07 · 11 · 26</span>
+      <nav className="fixed inset-x-0 top-0 z-20 flex items-center justify-between px-4 py-3.5 sm:px-6 sm:py-5 text-[11px] uppercase tracking-[0.14em] sm:text-xs sm:tracking-[0.22em] md:px-12 backdrop-blur-[2px] bg-background/30">
+        <a href="#top" className="font-serif text-xl sm:text-2xl font-light tracking-[0.12em] text-primary shrink-0">D <span className="italic text-accent">&</span> A</a>
+        <div className="flex items-center gap-3.5 sm:gap-6 md:gap-8 font-medium">
+          <a href="#details" className="transition-opacity hover:opacity-60">Details</a>
+          <a href="#schedule" className="transition-opacity hover:opacity-60">Schedule</a>
+          <a href="#rsvp" className="transition-opacity hover:opacity-60">RSVP</a>
+        </div>
+        <span className="hidden min-[500px]:inline-block font-mono text-[10px] text-muted-foreground">07 · 11 · 26</span>
       </nav>
 
       <section id="top" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-6 pt-16 pb-10 text-center md:pt-20 md:pb-14">
@@ -221,8 +225,8 @@ export default function Page() {
         {/* Bottom: Lowered grand names, date, and scroll button */}
         <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-3 sm:gap-4">
           {/* Couple Names - Grand & Elegant */}
-          <h1 className="animate-fade-up font-dzeragir text-7xl leading-[1.05] tracking-normal text-primary drop-shadow-sm sm:text-8xl md:text-9xl lg:text-[9.5rem]">
-            Դավիթ <span className="font-dzeragir text-accent text-[0.85em] mx-1 md:mx-2 inline-block">և</span> Արիշ
+          <h1 className="animate-fade-up font-dzeragir text-[clamp(2.4rem,10.5vw,4.5rem)] leading-[1.05] tracking-normal text-primary drop-shadow-sm whitespace-nowrap sm:text-8xl md:text-9xl lg:text-[9.5rem]">
+            Դավիթ <span className="font-dzeragir text-accent text-[0.85em] mx-1 sm:mx-1.5 md:mx-2 inline-block">և</span> Արիշ
           </h1>
 
           {/* Decorative Divider */}
