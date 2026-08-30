@@ -512,7 +512,7 @@ export default function Page() {
         <div className="rounded-3xl border border-primary/20 bg-white/80 p-6 shadow-lg backdrop-blur-md sm:p-8 md:p-10">
           <h2 className="text-center font-armenian-sans text-xl font-normal leading-relaxed text-primary sm:text-2xl">
             Խնդրում ենք հաստատեք Ձեր ներկայությունը<br />
-            <span className="text-muted-foreground text-base sm:text-lg">մինչև հոկտեմբերի 1-ը</span>
+            <span className="text-muted-foreground text-base sm:text-lg">մինչև հոկտեմբերի 18-ը</span>
           </h2>
 
           {/* Refined Dress Code Card */}
