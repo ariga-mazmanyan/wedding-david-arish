@@ -208,7 +208,7 @@ export default function Page() {
         <span className="hidden min-[500px]:inline-block font-mono text-[10px] text-muted-foreground">07 · 11 · 26</span>
       </nav>
 
-      <section id="top" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-6 pt-16 pb-10 text-center md:pt-20 md:pb-14">
+      <section id="top" className="relative z-10 flex min-h-[100svh] flex-col justify-between overflow-hidden bg-background px-4 pt-16 pb-10 text-center sm:px-6 md:pt-20 md:pb-14">
         <div className="absolute inset-0 bg-[url('/hero-mobile.jpg')] md:bg-[url('/hero.jpg')] bg-cover bg-[position:80%_center] md:bg-[position:80%_center] opacity-90" aria-hidden="true" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(248,245,239,.65)_0%,rgba(248,245,239,.12)_25%,rgba(248,245,239,.15)_45%,rgba(248,245,239,.82)_70%,rgba(248,245,239,.96)_100%)] md:bg-[linear-gradient(180deg,rgba(248,245,239,.55)_0%,rgba(248,245,239,.12)_25%,rgba(248,245,239,.80)_70%,rgba(248,245,239,.96)_100%)]" aria-hidden="true" />
 
@@ -223,9 +223,9 @@ export default function Page() {
         <div className="min-h-[8rem] sm:min-h-[11rem] md:min-h-[14rem]" aria-hidden="true" />
 
         {/* Bottom: Lowered grand names, date, and scroll button */}
-        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-3 sm:gap-4">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center gap-3 sm:gap-4">
           {/* Couple Names - Grand & Elegant */}
-          <h1 className="animate-fade-up font-dzeragir text-[clamp(2.4rem,10.5vw,4.5rem)] leading-[1.05] tracking-normal text-primary drop-shadow-sm whitespace-nowrap sm:text-8xl md:text-9xl lg:text-[9.5rem]">
+          <h1 className="animate-fade-up font-dzeragir text-[clamp(3.3rem,14.5vw,5.6rem)] leading-[1.02] tracking-normal text-primary drop-shadow-sm whitespace-nowrap sm:text-8xl md:text-9xl lg:text-[10rem]">
             Դավիթ <span className="font-dzeragir text-accent text-[0.85em] mx-1 sm:mx-1.5 md:mx-2 inline-block">և</span> Արիշ
           </h1>
 
@@ -684,7 +684,7 @@ export default function Page() {
       </section>
 
       <footer className="relative z-10 flex flex-col items-center gap-3 border-t border-primary/15 bg-white/80 px-6 py-10 text-center backdrop-blur-md">
-        <p className="font-dzeragir text-3xl text-primary">Դավիթ և Արիշ</p>
+        <p className="font-dzeragir text-4xl text-primary sm:text-5xl">Դավիթ և Արիշ</p>
         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">07 · 11 · 2026</p>
         <p className="mt-2 flex items-center justify-center gap-1.5 font-serif italic text-xs tracking-wider text-muted-foreground/80 sm:text-sm">
           Made by Arish <span className="text-accent not-italic">♥</span>
