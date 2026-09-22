@@ -7,21 +7,29 @@ const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || 'https://script
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { fullName, side, attendance, guestCount, guestNames } = body
+    const { fullName, side, attendance, guestCount, guestNames, rawSide, rawAttendance, dateFormatted } = body
 
     if (!fullName || !attendance) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
+    const isGroomSide = side === 'groom' || rawSide === 'groom' || side === 'Փեսայի կողմ'
+    const isAttending = attendance === 'coming' || rawAttendance === 'coming' || attendance === 'Մենք կգանք'
+
+    const formattedSide = isGroomSide ? 'Փեսայի կողմ' : 'Հարսի կողմ'
+    const formattedAttendance = isAttending ? 'Մենք կգանք' : 'Չենք կարող գալ'
+    const formattedGuestCount = isAttending ? (guestCount && guestCount !== '0' ? String(guestCount) : '1') : '0'
+    const formattedGuestNames = isAttending ? (guestNames && String(guestNames).trim() ? String(guestNames).trim() : '—') : '—'
+
     const newRsvp = {
       id: Date.now().toString(),
       timestamp: new Date().toISOString(),
-      dateFormatted: new Date().toLocaleString('hy-AM', { timeZone: 'Asia/Yerevan' }),
-      fullName,
-      side: side === 'groom' ? 'Փեսայի կողմ' : 'Հարսի կողմ',
-      attendance: attendance === 'coming' ? 'Մենք կգանք' : 'Չենք կարող գալ',
-      guestCount: attendance === 'coming' ? (guestCount || '1') : '0',
-      guestNames: attendance === 'coming' ? (guestNames || '—') : '—',
+      dateFormatted: dateFormatted || new Date().toLocaleString('hy-AM', { timeZone: 'Asia/Yerevan' }),
+      fullName: typeof fullName === 'string' ? fullName.trim() : fullName,
+      side: formattedSide,
+      attendance: formattedAttendance,
+      guestCount: formattedGuestCount,
+      guestNames: formattedGuestNames,
     }
 
     // 1. Local backup save to guarantee no lost responses

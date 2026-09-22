@@ -44,33 +44,46 @@ export default function Page() {
     setIsSubmitting(true)
     setErrorMessage('')
 
+    const isGroom = side === 'groom'
+    const isComing = attendance === 'coming'
+
     const payload = {
-      fullName,
-      side: side === 'groom' ? 'Փեսայի կողմ' : 'Հարսի կողմ',
-      attendance: attendance === 'coming' ? 'Մենք կգանք' : 'Չենք կարող գալ',
-      guestCount: attendance === 'coming' ? (guestCount || '1') : '0',
-      guestNames: attendance === 'coming' ? (guestNames || '—') : '—',
+      fullName: fullName.trim(),
+      side: isGroom ? 'Փեսայի կողմ' : 'Հարսի կողմ',
+      rawSide: side,
+      attendance: isComing ? 'Մենք կգանք' : 'Չենք կարող գալ',
+      rawAttendance: attendance,
+      guestCount: isComing ? (guestCount || '1') : '0',
+      guestNames: isComing ? (guestNames || '—') : '—',
       dateFormatted: new Date().toLocaleString('hy-AM', { timeZone: 'Asia/Yerevan' }),
     }
 
     try {
-      // 1. Direct send to Google Apps Script Webhook
-      await fetch('https://script.google.com/macros/s/AKfycbwbY6DchTWmNwxdjC5WdJnjwGp5W8L1N3noahJdEtc4DBnqZVn3kFhlXwpXPkmhU4s43Q/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload),
-      })
-
-      // 2. Also send to local API route backup
-      fetch('/api/rsvp', {
+      // 1. Submit to API route (saves local backup and forwards to Google Sheet)
+      const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-      }).catch(() => {})
+      })
+
+      if (!res.ok) {
+        throw new Error('RSVP submission failed')
+      }
 
       setSubmitted(true)
-    } catch {
+    } catch (err) {
+      console.warn('API route submission error, attempting direct Google Sheet fallback:', err)
+      // 2. Direct fallback send to Google Apps Script Webhook
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbwbY6DchTWmNwxdjC5WdJnjwGp5W8L1N3noahJdEtc4DBnqZVn3kFhlXwpXPkmhU4s43Q/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload),
+        })
+      } catch (fallbackErr) {
+        console.error('Direct fallback error:', fallbackErr)
+      }
       setSubmitted(true) // Graceful fallback
     } finally {
       setIsSubmitting(false)
